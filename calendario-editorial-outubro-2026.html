@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calendário Editorial · Outubro 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f5;--card:#fff;--ink:#16181d;--mut:#6b7079;--line:#e5e7e3;--acc:#16181d;--r:14px;--fi:#15803d;--no:#ea6a0a;--cr:#1d4ed8;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-size:14px}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid #7c9cff;outline-offset:2px}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:20px 28px 8px}
+h1{margin:0;font-size:24px;letter-spacing:-.02em}header p{margin:2px 0 0;color:var(--mut)}
+.hr{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:9px 14px;font-weight:600;transition:.15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px #0001}.btn:active{transform:none}
+.btn.p{background:var(--ink);color:#fff;border-color:var(--ink)}.btn.d{color:#b42318}
+input,select,textarea{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;width:100%}
+.hr input{width:200px}
+.av{width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:12px}
+.pill{background:#eceee9;border-radius:99px;padding:5px 11px;font-size:12px;font-weight:600}
+nav{display:flex;gap:6px;padding:8px 28px;overflow-x:auto;border-bottom:1px solid var(--line)}
+nav button{border:0;background:none;padding:11px 16px;border-radius:10px;font-weight:600;color:var(--mut);white-space:nowrap;transition:.15s}
+nav button:hover{background:#eceee9}nav button[aria-selected=true]{background:var(--ink);color:#fff}
+main{padding:20px 28px 60px;animation:in .25s}@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:0 1px 3px #0000000a}
+.kpi b{font-size:34px;display:block;letter-spacing:-.03em}.kpi span{color:var(--mut);font-weight:600}
+.bar{height:10px;background:#eceee9;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;border-radius:9px;transition:width .5s}
+.row{display:grid;grid-template-columns:150px 1fr 30px;gap:10px;align-items:center;margin:10px 0}
+.sum{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.sum h2{margin:0 8px 0 0;font-size:20px}
+.tl{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto}
+.tl button{flex:1;min-width:130px;text-align:left;border:1px solid var(--line);border-left:5px solid var(--c);background:#fff;border-radius:10px;padding:8px 10px;font-size:12px}
+.tl button:hover{background:#f0f2ee}.tl b{display:block}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin:10px 0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:5px}
+.tabs2{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tabs2 .btn[aria-pressed=true]{background:var(--ink);color:#fff}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.wd{font-weight:700;color:var(--mut);font-size:12px;padding:0 4px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;min-height:150px;display:flex;flex-direction:column;gap:5px;transition:.15s}
+.day:hover{border-color:#c9ccc6}.day.blank{background:none;border:0;min-height:0}
+.day.hoje{border:2px solid var(--ink)}.day.hoje .dn:after{content:' · HOJE';color:var(--ink)}
+.dn{font-weight:800;font-size:15px}.dn small{font-weight:600;color:var(--mut);margin-left:4px;display:none}
+.mk{font-size:11px;background:#f0f1ee;border-radius:6px;padding:3px 6px;color:#3d4148;border-left:3px solid #9aa0a8}
+.mk.e{background:#eef1f6;border-left-color:#64748b;font-style:italic}
+.it{all:unset;box-sizing:border-box;display:block;cursor:pointer;background:#fff;border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:5px 7px;font-size:12px;transition:.15s}
+.it:hover,.it:focus-visible{transform:translateY(-1px);box-shadow:0 5px 14px #0002}
+.it:focus-visible{outline:3px solid #7c9cff}
+.it b{display:block;font-size:10.5px;color:var(--c)}.it span{display:block;line-height:1.25;font-weight:600}
+.bd{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:99px;background:color-mix(in srgb,var(--c) 14%,#fff);color:var(--c);margin-top:3px;border:1px solid color-mix(in srgb,var(--c) 40%,#fff)}
+.late{color:#b42318;font-weight:800;font-size:10.5px;margin-left:4px}
+.more{font-size:11px;color:var(--mut);font-weight:600}
+.list .d{margin:14px 0 6px;font-weight:800}.list .it{margin-bottom:6px;padding:9px 11px;font-size:13px}
+.panel{display:none;margin-bottom:14px}.panel.on{display:block}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:5px 0 12px}.chips button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:600}
+.chips button[aria-pressed=true]{background:var(--ink);color:#fff}
+.kb{display:grid;grid-template-columns:repeat(6,minmax(200px,1fr));gap:12px;overflow-x:auto;align-items:start}
+.col{background:#eef0ec;border-radius:12px;padding:10px;min-height:200px}.col.over{outline:2px dashed var(--ink)}
+.col h3{margin:2px 4px 10px;font-size:13px}.col .it{margin-bottom:7px;cursor:grab}
+.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.modal{position:fixed;inset:0;background:#0007;display:none;place-items:center;padding:16px;z-index:10}.modal.on{display:grid}
+.mb{background:#fff;border-radius:18px;width:min(720px,100%);max-height:92vh;overflow:auto;padding:24px;animation:pop .2s}@keyframes pop{from{opacity:0;transform:scale(.96)}}
+.mb h2{margin:0 0 4px}.f{display:grid;grid-template-columns:1fr 1fr;gap:12px}.f label{font-size:11px;font-weight:700;color:var(--mut);display:block}.f .w{grid-column:1/-1}
+.ck{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}.ck label{display:flex;gap:8px;align-items:center;font-size:13px;padding:8px;border:1px solid var(--line);border-radius:9px}
+.ck input{width:18px;height:18px;accent-color:var(--c)}
+.ac{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+#toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,30px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:10px;opacity:0;transition:.25s;z-index:20;pointer-events:none}#toast.on{opacity:1;transform:translate(-50%,0)}
+details{position:relative}details summary{list-style:none}details .menu{position:absolute;right:0;top:44px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px;z-index:5;display:grid;gap:4px;min-width:190px;box-shadow:0 10px 30px #0002}
+.menu .btn{border:0;text-align:left}
+@media(max-width:1000px){.day{min-height:120px;padding:6px}.it span{font-size:11px}}
+@media(max-width:720px){header,nav,main{padding-left:14px;padding-right:14px}.cal{grid-template-columns:1fr}.wd,.day.blank{display:none}.day{min-height:0}.dn small{display:inline}.f,.ck{grid-template-columns:1fr}.kb{grid-template-columns:repeat(6,80%)}.hr input{width:140px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header>
+ <div><h1>Calendário Editorial</h1><p>Outubro 2026 · FIAMA · Fruteria da Noeme · Cruzeiro do Sul</p></div>
+ <div class="hr">
+  <span class="pill">31 dias · 3 marcas</span>
+  <input id="q" type="search" placeholder="🔍 Buscar (ex.: Círio, enfermagem)" aria-label="Pesquisar conteúdos">
+  <button class="btn" id="bf" aria-label="Abrir filtros">Filtros</button>
+  <button class="btn p" id="bn">+ Novo conteúdo</button>
+  <details><summary class="btn" aria-label="Menu de dados">Dados ▾</summary><div class="menu">
+   <button class="btn" id="ex">Exportar dados (JSON)</button><button class="btn" id="im">Importar dados</button><button class="btn d" id="rs">Resetar calendário</button></div></details>
+  <div class="av" title="Marketing" aria-label="Marketing">MK</div>
+  <input type="file" id="fi" accept=".json" hidden>
+ </div>
+</header>
+<nav role="tablist" id="nav"></nav>
+<main id="app"></main>
+<div class="modal" id="md" role="dialog" aria-modal="true"><div class="mb" id="mb"></div></div>
+<div id="toast" role="status"></div>
+<script>
+/* ============ DADOS ============ */
+const B={fiama:{n:'FIAMA',c:'#15803d'},noeme:{n:'Fruteria da Noeme',c:'#ea6a0a'},cruzeiro:{n:'Cruzeiro do Sul',c:'#1d4ed8'}};
+const ST={ideia:['Ideia','#6b7280','○'],planejado:['Planejado','#2563eb','◔'],producao:['Em produção','#a16207','◑'],revisao:['Em revisão','#c2410c','◕'],aprovado:['Aprovado','#7c3aed','✔'],publicado:['Publicado','#15803d','●']};
+const FM={feed:'🖼️ Feed',carrossel:'📚 Carrossel',reels:'🎬 Reels',stories:'📱 Stories',institucional:'🏛️ Institucional',comercial:'🎯 Comercial',campanha:'📣 Campanha'};
+const OB=['alcance','engajamento','autoridade','conversão','captação','institucional','relacionamento'];
+const RESP=['Marketing','Design','Social Media','Comercial'];
+const CK=[['briefing','Briefing definido'],['copy','Copy criada'],['designI','Design iniciado'],['designF','Design finalizado'],['review','Revisão'],['approved','Aprovado'],['scheduled','Agendado'],['published','Publicado']];
+const TABS=[['geral','Visão geral'],['cal','Calendário'],['fiama','FIAMA'],['noeme','Fruteria da Noeme'],['cruzeiro','Cruzeiro do Sul'],['prod','Produção'],['ideias','Ideias / Banco de conteúdo']];
+const SUB={fiama:'Decida ir mais longe + Esquenta Black + Outubro Rosa',noeme:'No Círio, o sabor começa aqui · Nonoca é a personagem central · Tucupi, Maniva, Jambu e Cupuaçu',cruzeiro:'Leads, matrículas e volta às aulas · 2 publicações principais por semana + Stories diários'};
+// dia|marca|formato|título|campanha|objetivo|curso/produto|CTA
+const RAW=`1|f|carrossel|Outubro começa. E sua decisão também.|Decida ir mais longe|institucional|Carreira, especialização, nova profissão|Entre na lista de interessados
+2|f|feed|Esquenta Black — O que vem aí?|Esquenta Black|alcance||Ative as notificações
+3|f|carrossel|5 sinais de que está na hora de investir na sua carreira|Carreira|engajamento||
+4|f|feed|Todo futuro começa com uma decisão|Decida ir mais longe|relacionamento||
+5|f|carrossel|Profissões técnicas que podem transformar sua carreira|Técnicos|autoridade|Enfermagem, Farmácia, Estética, Administração, Eletrotécnica, Seg. do Trabalho, Nutrição, Gastronomia, Análises Clínicas, Transações Imobiliárias|Falar com consultor
+6|f|carrossel|Enfermagem: profissão, responsabilidade e cuidado|Técnicos|captação|Técnico em Enfermagem|Quer conhecer? Chame a FIAMA
+7|f|carrossel|Você já tem uma graduação. E agora?|Pós-graduação|captação|ABA, Psicopedagogia, Neuropsicopedagogia, Docência, Neurociência, Educação Especial, Gestão Escolar|
+8|f|feed|As oportunidades começam antes da Black|Esquenta Black|conversão||
+9|f|carrossel|Mercado da estética: onde conhecimento encontra oportunidade|Estética|captação|Técnico em Estética, Pós em Estética Avançada|
+10|f|feed|Depoimento de aluno|Prova social|relacionamento||
+11|f|feed|Não existe idade certa para decidir ir mais longe|Decida ir mais longe|relacionamento||
+12|f|carrossel|Conhecimento também é uma forma de cuidar|Educação|autoridade||
+13|f|campanha|Outubro Rosa FIAMA|Outubro Rosa|institucional||Compartilhe informação
+14|f|carrossel|Quantas profissões ajudam a cuidar da saúde?|Saúde + carreira|autoridade|Enfermagem, Farmácia, Análises Clínicas, Nutrição, Estética, Enfermagem do Trabalho|
+15|f|institucional|Quem ensina, transforma|Dia do Professor|institucional||Marque um professor que transformou sua história
+16|f|comercial|Esquenta Black — primeiro grande push|Esquenta Black|conversão||Fale pelo WhatsApp
+17|f|carrossel|Quem quer crescer precisa continuar aprendendo|Gestão e Marketing|captação|Gestão e Marketing, Administração, Gestão Escolar|
+18|f|feed|Seu futuro não acontece sozinho|Decida ir mais longe|relacionamento||
+19|f|carrossel|Profissões que protegem pessoas todos os dias|Segurança do Trabalho|autoridade|Segurança do Trabalho, Enfermagem do Trabalho|
+20|f|feed|Carreiras para quem ama alimentação, ciência e cuidado|Alimentação|engajamento|Nutrição, Gastronomia|
+21|f|carrossel|Duas áreas essenciais para a saúde|Saúde|autoridade|Análises Clínicas, Farmácia|
+22|f|comercial|A Black está chegando|Esquenta Black|conversão||Quero receber as condições
+23|f|carrossel|Ser professor é escolher transformar futuros|Pedagogia|captação|Licenciatura em Pedagogia|
+24|f|feed|Pós-graduação — Educação|Pós-graduação|captação|Psicopedagogia, Neuropsicopedagogia, Educação Especial, Alfabetização e Multiletramento, Gestão Escolar, Docência do Ensino Superior|
+25|f|feed|Você não precisa saber exatamente onde vai chegar|Decida ir mais longe|relacionamento||
+26|f|carrossel|Profissões para quem gosta de tecnologia, sistemas e soluções|Tecnologia|captação|Técnico em Eletrotécnica|
+27|f|carrossel|Profissões que trabalham diretamente com pessoas e sociedade|Serviço Social|autoridade|Serviço Social em Saúde, Serviço Social no Contexto Escolar|
+28|f|comercial|Última semana Esquenta Black|Esquenta Black|conversão||Entre na lista de espera
+29|f|carrossel|Você já decidiu?|Esquenta Black|conversão|Técnico, Graduação, Pós-graduação|Fale com a FIAMA
+30|f|comercial|Pré-Black|Esquenta Black|conversão||Lista VIP
+31|f|campanha|Grande encerramento do Esquenta Black|Esquenta Black|conversão||Entre na lista VIP da Black FIAMA
+1|n|reels|O Círio começa aqui|No Círio, o sabor começa aqui|alcance|Tucupi, Maniva, Jambu, Cupuaçu|Salva e manda para quem organiza o almoço
+3|n|carrossel|4 ingredientes que não podem faltar no almoço de Círio|No Círio, o sabor começa aqui|conversão|Tucupi, Maniva, Jambu, Cupuaçu|Comece sua lista
+6|n|reels|Checklist do almoço do Círio|No Círio, o sabor começa aqui|conversão|Tucupi, Maniva, Jambu, polpa de cupuaçu, farinha, ovos, hortaliças, frutas|Passa na Noeme e garanta o que falta
+9|n|reels|A Nonoca montou sua lista de Círio|No Círio, o sabor começa aqui|conversão||Se faltar algo, vem na Noeme
+11|n|reels|Círio de Nazaré|No Círio, o sabor começa aqui|relacionamento||Feliz Círio de Nazaré
+13|n|carrossel|O que fazer com as sobras do Círio?|Aproveitamento|engajamento|Jambu, tucupi, polpa de cupuaçu, frutas|
+16|n|reels|Você sabe de onde vem?|Curiosidades da Nonoca|engajamento|Jambu|Leve jambu para casa
+20|n|reels|Nonoca responde|Curiosidades da Nonoca|autoridade|Frutas, polpas, hortaliças|
+23|n|carrossel|5 motivos para comprar na Fruteria da Noeme|Abastecimento|conversão|Frutas, hortaliças, polpas, mercadinho|Tem Noeme no Maguari
+27|n|reels|A cesta da semana da Nonoca|Cesta da Nonoca|conversão|Frutas, legumes, hortaliças, polpa, mercadinho|Passa na Noeme
+30|n|reels|Outubro na Noeme|Fidelização|relacionamento||Obrigado, Maguari
+2|c|reels|Volta às Aulas: seu próximo capítulo começa agora|Volta às Aulas|captação|Todos os cursos|Fale com nossa equipe
+6|c|carrossel|5 cursos para quem quer mudar de área|Cursos|captação|ADS, Marketing, RH, Logística, Gestão Comercial|Descubra seu curso
+15|c|reels|Dia do Professor — Quem ensina, transforma|Dia do Professor|institucional|Pedagogia e Licenciaturas|Escolha também transformar
+19|c|carrossel|Profissões que nasceram com a tecnologia|Tecnologia|captação|ADS, Segurança da Informação, Cibersegurança|Conheça os cursos
+23|c|reels|Qual desses cursos combina com você?|Captação|captação|Diversos|Comente sua área
+26|c|carrossel|Se você gosta de números...|Profissões|captação|Matemática, Contábeis, Economia, Gestão Financeira|Conheça as opções
+28|c|reels|Quem transforma a sociedade também precisa se preparar|Gestão Pública|institucional|Gestão Pública + Serviço Social|Saiba mais
+30|c|reels|Não deixe sua próxima oportunidade para depois|Comercial|conversão|Todos os cursos|Fale com um consultor
+31|c|reels|Outubro termina. Sua decisão pode começar.|Fechamento|conversão|Todos os cursos|Faça sua matrícula`;
+const RF=`1|Manifesto: você pode decidir ir mais longe
+2|3 motivos para você acompanhar a FIAMA em outubro
+3|Trend: Eu em 2023 / Eu depois de decidir estudar
+4|Vídeo emocional: do estudo em casa ao certificado
+5|Qual desses técnicos combina com você?
+6|Você se imagina trabalhando na área da saúde?
+7|4 motivos para fazer uma pós
+8|Teaser: Se você está pensando em estudar...
+9|Antes/depois conceitual da carreira em estética
+10|Depoimento real de aluno (20–30s)
+11|História de transformação
+12|Você sabia? Uma profissão FIAMA
+13|Informação também salva vidas
+14|Profissões da saúde em transições
+15|Professores: por que você escolheu ensinar?
+16|Você está esperando novembro?
+17|3 habilidades que todo profissional precisa desenvolver
+18|Manifesto curto: seu futuro não acontece sozinho
+19|O que faz um profissional de Segurança do Trabalho?
+20|Nutrição ou Gastronomia?
+21|Rotina de laboratório
+22|Teaser cinematográfico da Black
+23|O que significa ser pedagogo?
+24|Qual pós combina com sua carreira?
+25|História de aluno
+26|Rotina do Técnico em Eletrotécnica
+27|Onde um assistente social pode atuar?
+28|Contagem regressiva Esquenta Black
+29|Se você estava esperando um sinal... É este.
+30|Trailer da Black
+31|Vídeo manifesto de encerramento`;
+const SF=`1|Abertura do mês|Enquete (graduação/pós/técnico) + apresentação do Esquenta Black + CTA lista de interessados
+2|Esquenta Black|Contagem regressiva + enquete "aproveitaria uma oportunidade especial?" + CTA ative as notificações
+3|Carreira|Caixinha: qual profissão você gostaria de exercer? (coletar respostas)
+4|Sonho|Pergunta: qual formação você escolheria começar hoje?
+5|Técnicos|Quiz "qual técnico trabalha com..." + CTA consultor
+6|Enfermagem|Quiz de enfermagem + CTA Técnico em Enfermagem
+7|Pós-graduação|Enquete: você já fez uma pós?
+8|Esquenta Black|Contagem regressiva + caixa: qual curso no Esquenta Black?
+9|Estética|Quiz de estética + CTA
+10|Prova social|Compartilhar depoimento + enquete: quer ver mais histórias?
+11|Conexão|Caixinha: qual sonho profissional você ainda não realizou?
+12|Educação|Quiz
+13|Outubro Rosa|Sequência: o que é / por que prevenção / acompanhamento de saúde / compartilhe informação
+14|Saúde + carreira|Enquete: você trabalha na área da saúde? + CTA cursos
+15|Dia do Professor|Bastidores + professores + CTA: marque um professor que transformou sua história
+16|Primeiro grande push|Contagem regressiva + CTA forte para WhatsApp
+17|Gestão + Marketing|Quiz de carreira
+18|Emocional|Pergunta: o que está impedindo você de começar?
+19|Segurança do Trabalho|Quiz + CTA
+20|Alimentação|Enquete: Nutrição / Gastronomia
+21|Análises Clínicas + Farmácia|Quiz: você saberia identificar essa área?
+22|Esquenta Black|Sticker QUERO RECEBER AS CONDIÇÕES (entra na lista comercial)
+23|Pedagogia|Enquete: você gostaria de trabalhar com educação?
+24|Pós — Educação|Quiz personalizado de pós
+25|Sonhos|Caixinha: complete "em 2027 eu quero..."
+26|Tecnologia / Eletrotécnica|Quiz
+27|Serviço Social|Perguntas e respostas
+28|Última semana Esquenta Black|Contagem regressiva + lista de espera
+29|Oferta / conversão|CTA direto para WhatsApp
+30|Pré-Black|Contagem 24h + caixa: qual curso quer ver na Black FIAMA?
+31|Encerramento Esquenta Black|5 stories: outubro chegou ao fim / você acompanhou / próxima etapa / contagem / CTA lista VIP Black FIAMA`;
+const SN=`1|Começou outubro|Outubro chegou; Círio se aproxima; Nonoca apresenta a campanha; Tucupi, Maniva, Jambu, Cupuaçu; enquete "já pensa no almoço do Círio?"
+2|Curiosidade do dia|Jambu e o formigamento na boca; "Tem jambu na Noeme"
+3|Dia do Tucupi|Produto, embalagem, preparo, sugestão; enquete "Tucupi combina com…?"
+4|Domingo de mesa cheia|Frutas, verduras e mercadinho; caixinha "o que falta na sua cozinha?"
+5|Maniva|Curiosidade + produto; "qual prato vai preparar para o Círio?"
+6|Checklist|Checklist visual: tucupi, maniva, jambu, farinha, ovos, hortaliças, frutas, polpas
+7|Oferta do dia|Oferta da Nonoca: produto + preço + validade
+8|Cupuaçu|Enquete de sobremesa: mousse, creme, sorvete, suco
+9|Contagem regressiva|Faltam 2 dias para o Círio; produtos do almoço
+10|Operação Círio|"É hoje!": estoque e movimento; já comprou? tucupi? jambu? maniva? polpa? Passa na Noeme
+11|Círio|Comunicação emocional, poucas ofertas; "Feliz Círio, Maguari"; Nonoca, fachada, mesa, equipe
+12|Pós-Círio|"Como foi o almoço?"; caixinha: manda foto da sua mesa de Círio
+13|Aproveitamento|"Não desperdice comida"; dicas rápidas
+14|Quarta da Nonoca|Dia fixo de promoção
+15|Você conhece essa fruta?|Fruta amazônica; resposta no story seguinte
+16|Nonoca responde|Caixa de perguntas sobre frutas, verduras e produtos
+17|Bastidores|Chegada dos produtos, organização, equipe, reposição, mercadinho
+18|Almoço de domingo|"Começa onde?" Na Noeme; frutas, hortaliças, mercadinho
+19|Fruta da semana|3 maneiras de consumir
+20|Curiosidade|Por que algumas frutas amadurecem mais rápido?
+21|Oferta da Nonoca|"Só enquanto durar o estoque"
+22|Polpas|Variedade; "qual sabor não pode faltar no freezer?"
+23|Mercadinho|"Você sabia que também temos mercadinho?"
+24|Lista de compras|Story interativo: escolha sua cesta
+25|Domingo de mesa cheia|Conteúdo emocional
+26|Última semana de outubro|Retrospectiva rápida do mês
+27|Cesta da Nonoca|Cesta montada; "o que a Nonoca poria na sua cesta?"
+28|Você sabia?|Curiosidade de produto amazônico
+29|Oferta relâmpago|"Hoje na Noeme": produto específico
+30|Clientes|Clientes reais (com autorização); "o que você sempre compra aqui?"
+31|Encerramento de outubro|Vídeo "Outubro foi assim na Noeme"; "Obrigado, Maguari. Novembro tem mais."`;
+const SC=`1|Abertura do mês|Enquete + cursos disponíveis + CTA|Institucional|institucional
+2|Volta às Aulas|Bastidores + cursos + chamada para matrícula|Geral|captação
+3|Qual curso combina com você?|Quiz: tecnologia, negócios, saúde, educação ou humanas|Todos|engajamento
+4|Domingo de decisão|"Se pudesse começar uma graduação hoje, qual escolheria?"|Geral|conversão
+5|Semana da transformação|Contagem regressiva + depoimento de aluno + caixa de perguntas|Geral|engajamento
+6|Plano B|Explicar cada curso + enquete "qual seria seu plano B?"|ADS, Marketing, RH, Logística, Gestão Comercial|captação
+7|Curso em foco|"Você sabia?" + carreira em tecnologia + enquete|ADS|captação
+8|Curso em foco|Perfil do profissional + áreas de atuação + CTA|Administração|captação
+9|Sextou com futuro|"O que falta para você começar?" + perguntas frequentes|Geral|conversão
+10|Escolha sua profissão|Quiz de profissões|Geral|engajamento
+11|Domingo em família|"Quem ensina também transforma futuros."|Pedagogia|institucional
+12|Dia das Crianças|"Toda criança merece oportunidades" + conteúdo sobre educação|Pedagogia/Educação|institucional
+13|Professor também começa pela escolha|Pedagogia, Letras, História, Matemática, Biologia|Licenciaturas|captação
+14|Contagem para Dia do Professor|Homenagem + depoimento + "qual professor marcou sua vida?"|Licenciaturas|institucional
+15|Dia do Professor|Professor/alunos + frases + homenagem|Licenciaturas|institucional
+16|Profissões que cuidam|Estética e Cosmética, Serviço Social, profissões do cuidado|Saúde|captação
+17|Quiz profissional|"Qual profissão combina com sua personalidade?"|Diversos|engajamento
+18|Dia do Médico|Homenagem + "por trás de cada profissional existe uma jornada de estudos"|Saúde|institucional
+19|Profissões que nasceram com a tecnologia|Cursos + mercado + CTA|ADS, Segurança da Informação, Cibersegurança|captação
+20|Tecnologia é seu futuro?|Quiz + cursos + CTA|Tecnologia|conversão
+21|Gestão para quem quer crescer|Administração, Gestão Comercial, Processos Gerenciais, Gestão Financeira|Gestão|captação
+22|Você seria um bom gestor?|Quiz de liderança|Gestão|engajamento
+23|Qual desses cursos combina com você?|Transições rápidas entre áreas|Diversos|captação
+24|Sábado de carreira|"Seu curso precisa combinar com seus objetivos" + caixa de perguntas|Geral|conversão
+25|Dia do Dentista|Homenagem + profissões da área da saúde|Saúde|institucional
+26|Se você gosta de números|"Qual dessas áreas tem mais a ver com você?"|Matemática, Contábeis, Economia, Gestão Financeira|captação
+27|Carreira em números|Curiosidades + profissões|Contábeis, Economia, Gestão Financeira|captação
+28|Dia do Servidor Público|Homenagem + apresentação do curso|Gestão Pública|institucional
+29|Últimos dias do mês|Contagem regressiva + dúvidas + CTA|Geral|conversão
+30|Não deixe para depois|Forte CTA para atendimento|Geral|conversão
+31|Fechamento de outubro|Retrospectiva + "qual curso você escolheu?" + CTA|Geral|conversão`;
+function seedAll(){const a=seed();let id=a.length+1;
+ const cf=d=>[2,8,16,22,28,29,30,31].includes(d)?'Esquenta Black':d==13?'Outubro Rosa':d==15?'Dia do Professor':'Carreira e cursos';
+ const mk=(d,b,f,t,camp,obj,n,prod)=>a.push({id:id++,date:ds(d),brand:b,format:f,title:t,campaign:camp,objective:obj,product:prod||'',cta:'',responsible:'Marketing',status:'planejado',notes:n||'',checklist:emptyCk()});
+ RF.split('\n').forEach(l=>{const p=l.split('|'),d=+p[0],c=cf(d);mk(d,'fiama','reels',p[1],c,c==='Esquenta Black'?'conversão':'alcance')});
+ SF.split('\n').forEach(l=>{const p=l.split('|'),d=+p[0],c=cf(d);mk(d,'fiama','stories','Stories · '+p[1],c,c==='Esquenta Black'?'conversão':'engajamento',p[2])});
+ const cv=[6,7,9,10,14,21,23,24,27,29],rl=[11,12,17,25,26,30,31];
+ SN.split('\n').forEach(l=>{const p=l.split('|'),d=+p[0];mk(d,'noeme','stories','Stories · '+p[1],'Stories diários',cv.includes(d)?'conversão':rl.includes(d)?'relacionamento':'engajamento',p[2])});
+ SC.split('\n').forEach(l=>{const p=l.split('|');mk(+p[0],'cruzeiro','stories','Stories · '+p[1],'Stories diários',p[4],p[2],p[3])});
+ return a}
+function dayItems(its){const m=its.filter(c=>c.format!=='stories'),s=its.filter(c=>c.format==='stories');
+ return m.map(item).join('')+(s.length?`<button class="it" data-stories="${dayOf(s[0].date)}" style="--c:#64748b" aria-label="${s.length} Stories do dia"><b>STORIES DIÁRIOS</b><span>📱 + ${s.length} Stories</span></button>`:'')}
+function openStories(d){const l=filtered().filter(c=>c.format==='stories'&&dayOf(c.date)===+d);openM(`<h2>Stories · ${pad(d)} out</h2><p style="color:var(--mut)">${l.length} stories planejados</p><div class="list">${l.map(item).join('')}</div><div class="ac"><button class="btn" data-act="x">Fechar</button></div>`)}
+const MARCOS={1:'Outubro Rosa;Dia do Vendedor',2:'Dia Mundial do Sorriso',3:'Período eleitoral',4:'1º turno das eleições;Dia Mundial dos Animais;Dia da Natureza',6:'Dia do Tecnólogo;Dia Mundial da Paralisia Cerebral',8:'Dia do Nordestino;Dia Mundial da Visão',10:'Dia Mundial da Saúde Mental;Luta contra a Violência à Mulher',11:'Prevenção da Obesidade',12:'FERIADO · N. Sra. Aparecida;Dia das Crianças;Dia da Leitura',13:'Dia do Fisioterapeuta;Dia do Terapeuta Ocupacional',15:'Dia do Professor',16:'Dia Mundial da Alimentação;Dia da Ciência e Tecnologia',17:'Dia Nacional da Vacinação;Dia do Eletricista',19:'Outubro Rosa — prevenção do câncer de mama',24:'Combate à Poliomielite',25:'Possível 2º turno das eleições;Dia da Democracia',27:'Saúde da População Negra',28:'Dia do Servidor Público;Dia Mundial do Judô',29:'Dia Nacional do Livro',31:'Halloween'};
+const TL=[[1,7,'FIAMA — Aquecimento','#15803d'],[8,15,'Círio / Outubro Rosa','#ea6a0a'],[16,22,'Esquenta Black','#15803d'],[23,28,'Conversão','#1d4ed8'],[29,31,'Pré-Black / fechamento','#15803d']];
+const WEEKS=[[1,4],[5,11],[12,18],[19,25],[26,31]];
+const WD=['SEG','TER','QUA','QUI','SEX','SÁB','DOM'];
+
+/* ============ ESTADO + STORAGE ============ */
+const KEY='calEditorialOut2026';
+const pad=n=>String(n).padStart(2,'0'),ds=d=>`2026-10-${pad(d)}`,dayOf=s=>+s.slice(8);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const emptyCk=()=>Object.fromEntries(CK.map(k=>[k[0],false]));
+function seed(){let id=1;const bm={f:'fiama',n:'noeme',c:'cruzeiro'};
+ return RAW.split('\n').map(l=>{const p=l.split('|');return{id:id++,date:ds(+p[0]),brand:bm[p[1]],format:p[2],title:p[3],campaign:p[4],objective:p[5],product:p[6]||'',cta:p[7]||'',responsible:'Marketing',status:'planejado',notes:'',checklist:emptyCk()}})}
+const fresh=()=>({contents:seedAll(),ideas:[],f:{brand:[],format:[],status:[],objective:[]},view:'cal',tab:'geral',week:0,q:''});
+let S;try{S=Object.assign(fresh(),JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){S=fresh()}
+if(!S.v2){const have=new Set(S.contents.map(k=>k.date+k.brand+k.format+k.title));let nid=Math.max(0,...S.contents.map(c=>c.id))+1;seedAll().forEach(k=>{if(!have.has(k.date+k.brand+k.format+k.title)){k.id=nid++;S.contents.push(k)}});S.v2=1}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const nextId=()=>Math.max(0,...S.contents.map(c=>c.id))+1;
+const today=(()=>{const d=new Date();return`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`})();
+const inOct=today.startsWith('2026-10');
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2000)}
+const $=s=>document.querySelector(s);
+
+/* ============ FILTROS ============ */
+function filtered(brandTab){
+ const q=S.q.trim().toLowerCase(),f=S.f;
+ return S.contents.filter(c=>{
+  if(brandTab&&c.brand!==brandTab)return false;
+  if(f.brand.length&&!f.brand.includes(c.brand))return false;
+  if(f.format.length&&!f.format.includes(c.format))return false;
+  if(f.status.length&&!f.status.includes(c.status))return false;
+  if(f.objective.length&&!f.objective.includes(c.objective))return false;
+  if(q&&![c.title,B[c.brand].n,c.campaign,c.format,c.objective,c.notes,c.product,c.cta].join(' ').toLowerCase().includes(q))return false;
+  return true}).sort((a,b)=>a.date.localeCompare(b.date)||a.brand.localeCompare(b.brand))}
+const isLate=c=>c.date<today&&c.status!=='publicado';
+
+/* ============ RENDER: componentes ============ */
+const stBadge=c=>{const s=ST[c.status];return`<span class="bd" style="--c:${s[1]}">${s[2]} ${s[0]}</span>`};
+const item=c=>`<button class="it" draggable="true" data-id="${c.id}" style="--c:${B[c.brand].c}" title="${esc(B[c.brand].n)} · ${esc(FM[c.format]?.slice(3)||c.format)} · ${esc(c.objective)} · ${ST[c.status][0]}" aria-label="${esc(c.title)}, ${esc(B[c.brand].n)}, ${ST[c.status][0]}"><b>${esc(B[c.brand].n)}</b><span>📝 ${esc(c.title)}</span><small>${FM[c.format]||c.format}</small><br>${stBadge(c)}${isLate(c)?'<span class="late">🔴 ATRASADO</span>':''}</button>`;
+const marks=d=>(MARCOS[d]||'').split(';').filter(Boolean).map(t=>`<div class="mk ${/elei|turno|eleitoral|Democracia/i.test(t)?'e':''}" title="${pad(d)}/10 — ${esc(t)}">📅 ${esc(t)}</div>`).join('');
+function dayCell(d,list){
+ const its=list.filter(c=>dayOf(c.date)===d),wd=WD[(d+2)%7];
+ return`<div class="day ${inOct&&today===ds(d)?'hoje':''}"><div class="dn">${pad(d)}<small>${wd}</small></div>${marks(d)}${dayItems(its)}${its.filter(c=>c.format!=='stories').length>1?`<div class="more">${its.filter(c=>c.format!=='stories').length} conteúdos</div>`:''}</div>`}
+function summary(list){
+ const n=s=>list.filter(c=>c.status===s).length,hoje=list.filter(c=>c.date===today).length;
+ return`<div class="sum"><h2>OUTUBRO 2026</h2><span class="pill">31 dias</span><span class="pill">${hoje} conteúdos hoje</span><span class="pill">${n('producao')} em produção</span><span class="pill">${n('revisao')} aguardando revisão</span><span class="pill">${n('publicado')} publicados</span><span class="pill">${list.filter(isLate).length} atrasados</span></div>`}
+const legend=()=>`<div class="leg">${Object.values(B).map(b=>`<span><i class="dot" style="--c:${b.c}"></i>${b.n}</span>`).join('')}<span>|</span>${Object.values(ST).map(s=>`<span style="color:${s[1]}">${s[2]} ${s[0]}</span>`).join('')}<span>📅 Data importante · 📝 Conteúdo</span></div>`;
+const chips=(k,opts,lab)=>`<div><label><b>${lab}</b></label><div class="chips">${opts.map(o=>`<button data-fk="${k}" data-fv="${o[0]}" aria-pressed="${S.f[k].includes(o[0])}">${o[1]}</button>`).join('')}</div></div>`;
+const filterPanel=()=>`<div class="card panel ${S.fp?'on':''}" id="fp">${chips('brand',Object.entries(B).map(([k,v])=>[k,v.n]),'Marca')}${chips('format',Object.entries(FM).map(([k,v])=>[k,v]),'Formato')}${chips('status',Object.entries(ST).map(([k,v])=>[k,v[0]]),'Status')}${chips('objective',OB.map(o=>[o,o]),'Objetivo')}<button class="btn" data-act="clr">Limpar filtros</button></div>`;
+
+/* ============ RENDER: telas ============ */
+function vGeral(){
+ const L=S.contents,n=s=>L.filter(c=>c.status===s).length,tot=L.length,pub=n('publicado'),prod=n('producao'),pend=L.filter(c=>c.status!=='publicado').length,pct=tot?Math.round(pub/tot*100):0,mx=Math.max(1,...Object.keys(B).map(b=>L.filter(c=>c.brand===b).length));
+ const prox=Object.keys(MARCOS).map(Number).filter(d=>!inOct||ds(d)>=today).slice(0,5);
+ return`<div class="grid4"><div class="card kpi"><span>Conteúdos planejados</span><b>${tot}</b></div><div class="card kpi"><span>Em produção</span><b>${prod}</b></div><div class="card kpi"><span>Prontos (publicados)</span><b>${pub}</b></div><div class="card kpi"><span>Pendentes</span><b>${pend}</b></div></div>
+ <div class="grid4" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><div class="card"><h3 style="margin-top:0">Conteúdos por marca</h3>${Object.entries(B).map(([k,b])=>{const t=L.filter(c=>c.brand===k).length;return`<div class="row"><span><i class="dot" style="--c:${b.c}"></i>${b.n}</span><div class="bar"><i style="width:${t/mx*100}%;background:${b.c}"></i></div><b>${t}</b></div>`}).join('')}</div>
+ <div class="card"><h3 style="margin-top:0">Progresso editorial</h3><div class="bar" style="height:16px"><i style="width:${pct}%;background:var(--ink)"></i></div><p><b>${pct}%</b> publicado (${pub} de ${tot})</p><h3>Por status</h3>${Object.entries(ST).map(([k,s])=>`<div class="row" style="grid-template-columns:120px 1fr 30px"><span style="color:${s[1]}">${s[2]} ${s[0]}</span><div class="bar"><i style="width:${tot?n(k)/tot*100:0}%;background:${s[1]}"></i></div><b>${n(k)}</b></div>`).join('')}</div>
+ <div class="card"><h3 style="margin-top:0">Datas importantes</h3>${prox.map(d=>`<p>📅 <b>${pad(d)}/10</b> — ${esc(MARCOS[d].split(';').join(' · '))}</p>`).join('')}<h3>Atrasados</h3><p>${L.filter(isLate).length?L.filter(isLate).length+' conteúdos atrasados':'Nenhum conteúdo atrasado.'}</p></div></div>`}
+function vCal(){
+ const list=filtered();let body;
+ if(S.view==='lista'){body=`<div class="list">${Array.from({length:31},(_, i)=>i+1).map(d=>{const its=list.filter(c=>dayOf(c.date)===d);return its.length||MARCOS[d]?`<div class="d">${pad(d)} OUT · ${WD[(d+2)%7]}</div>${marks(d)}${dayItems(its)}`:''}).join('')||'<p>Nenhum conteúdo encontrado. Ajuste os filtros ou a busca.</p>'}</div>`}
+ else if(S.view==='semana'){const [a,b]=WEEKS[S.week];body=`<div class="tabs2"><button class="btn" data-act="wp">‹ Semana anterior</button><button class="btn" data-act="wc">Semana atual</button><button class="btn" data-act="wn">Próxima semana ›</button><span class="pill">${pad(a)}–${pad(b)} out</span></div><div class="cal">${Array.from({length:b-a+1},(_, i)=>dayCell(a+i,list)).join('')}</div>`}
+ else{body=`<div class="cal">${WD.map(w=>`<div class="wd">${w}</div>`).join('')}${'<div class="day blank"></div>'.repeat(3)}${Array.from({length:31},(_, i)=>dayCell(i+1,list)).join('')}</div>`}
+ return`${summary(S.contents)}<div class="tl">${TL.map(t=>`<button data-tl="${t[0]}" style="--c:${t[3]}"><b>${pad(t[0])}–${pad(t[1])}</b>${t[2]}</button>`).join('')}</div>
+ <div class="tabs2">${[['cal','Calendário'],['semana','Semana'],['lista','Lista']].map(v=>`<button class="btn" data-view="${v[0]}" aria-pressed="${S.view===v[0]}">${v[1]}</button>`).join('')}</div>${filterPanel()}${body}${legend()}`}
+function vMarca(b){const list=filtered(b),c=B[b].c;
+ return`<div class="sum"><h2 style="color:${c}"><i class="dot" style="--c:${c}"></i>${B[b].n}</h2><span class="pill">${list.length} conteúdos</span></div><p style="color:var(--mut);margin-top:-4px">${SUB[b]}</p>${filterPanel()}<div class="list">${list.map(x=>`<div class="d">${pad(dayOf(x.date))} OUT · ${WD[(dayOf(x.date)+2)%7]}</div>${item(x)}`).join('')||'<p>Nenhum conteúdo encontrado.</p>'}</div>`}
+function vProd(){const list=filtered().filter(c=>c.format!=='stories'||S.f.format.includes('stories'));
+ return`${filterPanel()}<div class="kb">${Object.entries(ST).map(([k,s])=>{const l=list.filter(c=>c.status===k);return`<div class="col" data-drop="${k}"><h3 style="color:${s[1]}">${s[2]} ${s[0]} · ${l.length}</h3>${l.map(item).join('')}</div>`}).join('')}</div><p style="color:var(--mut)">Arraste os cards entre as colunas para mudar o status. Stories aparecem aqui ao filtrar por Formato → Stories.</p>`}
+const PRI={alta:'🔥 Alta',media:'⭐ Média',baixa:'○ Baixa'};
+function vIdeias(){return`<div class="sum"><h2>Banco de ideias</h2><button class="btn p" data-act="ni">+ Nova ideia</button></div><div class="ideas">${S.ideas.map(i=>`<div class="card" style="border-left:5px solid ${B[i.brand]?.c||'#999'}"><b>${esc(i.title)}</b><p style="margin:6px 0;color:var(--mut)">${esc(B[i.brand]?.n||'')} · ${esc(i.theme)} · ${FM[i.format]||''}</p><p>${esc(i.obj)} ${i.note?'— '+esc(i.note):''}</p><span class="pill">${PRI[i.pri]}</span> <button class="btn" data-idea-plan="${i.id}">Planejar</button> <button class="btn d" data-idea-del="${i.id}" aria-label="Excluir ideia">✕</button></div>`).join('')||'<p>Nenhuma ideia guardada ainda. Use “+ Nova ideia”.</p>'}</div>`}
+function render(){
+ $('#nav').innerHTML=TABS.map(t=>`<button role="tab" data-tab="${t[0]}" aria-selected="${S.tab===t[0]}">${t[1]}</button>`).join('');
+ const v={geral:vGeral,cal:vCal,prod:vProd,ideias:vIdeias}[S.tab];
+ const el=$('#app');el.style.animation='none';el.offsetHeight;el.style.animation='';
+ el.innerHTML=v?v():vMarca(S.tab);save()}
+
+/* ============ MODAL ============ */
+const opt=(o,sel)=>o.map(x=>`<option value="${x[0]}" ${x[0]===sel?'selected':''}>${x[1]}</option>`).join('');
+function openM(h){$('#mb').innerHTML=h;$('#md').classList.add('on');$('#mb').querySelector('input,select')?.focus()}
+const closeM=()=>$('#md').classList.remove('on');
+function formC(c){const n=!c.id,col=B[c.brand].c;
+ return`<div style="--c:${col}"><h2 style="color:${col}">${n?'Novo conteúdo':esc(B[c.brand].n)}</h2><p style="color:var(--mut)">${n?'Preencha e adicione ao calendário':new Date(c.date+'T12:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})}</p>
+ <div class="f"><div><label for="m_brand">MARCA</label><select id="m_brand">${opt(Object.entries(B).map(([k,v])=>[k,v.n]),c.brand)}</select></div>
+ <div><label for="m_date">DATA</label><input type="date" id="m_date" min="2026-10-01" max="2026-10-31" value="${c.date}"></div>
+ <div class="w"><label for="m_title">TÍTULO</label><input id="m_title" value="${esc(c.title)}" placeholder="Digite o título"></div>
+ <div><label for="m_format">FORMATO</label><select id="m_format">${opt(Object.entries(FM),c.format)}</select></div>
+ <div><label for="m_camp">CAMPANHA</label><input id="m_camp" value="${esc(c.campaign)}"></div>
+ <div><label for="m_obj">OBJETIVO</label><select id="m_obj">${opt(OB.map(o=>[o,o]),c.objective)}</select></div>
+ <div><label for="m_status">STATUS</label><select id="m_status">${opt(Object.entries(ST).map(([k,v])=>[k,v[2]+' '+v[0]]),c.status)}</select></div>
+ <div class="w"><label for="m_prod">CURSO / PRODUTO</label><input id="m_prod" value="${esc(c.product)}"></div>
+ <div><label for="m_cta">CTA</label><input id="m_cta" value="${esc(c.cta)}"></div>
+ <div><label for="m_resp">RESPONSÁVEL</label><select id="m_resp">${opt(RESP.map(r=>[r,r]),c.responsible)}</select></div>
+ <div class="w"><label for="m_notes">OBSERVAÇÕES</label><textarea id="m_notes" rows="3">${esc(c.notes)}</textarea></div></div>
+ ${n?'':`<h3>Checklist de produção</h3><div class="ck">${CK.map(k=>`<label><input type="checkbox" data-ck="${k[0]}" ${c.checklist[k[0]]?'checked':''}> ${k[1]}</label>`).join('')}</div>`}
+ <div class="ac"><button class="btn p" data-act="${n?'add':'sv'}" data-id="${c.id||''}">${n?'Adicionar ao calendário':'Salvar alterações'}</button>${n?'':`<button class="btn" data-act="dup" data-id="${c.id}">Duplicar conteúdo</button><button class="btn d" data-act="del" data-id="${c.id}">Excluir</button>`}<button class="btn" data-act="x">Fechar</button></div></div>`}
+const val=i=>$('#m_'+i).value;
+function readForm(c){Object.assign(c,{brand:val('brand'),date:val('date')||c.date,title:val('title').trim()||'Sem título',format:val('format'),campaign:val('camp'),objective:val('obj'),status:val('status'),product:val('prod'),cta:val('cta'),responsible:val('resp'),notes:val('notes')});return c}
+function openContent(id){const c=S.contents.find(x=>x.id==id);if(c)openM(formC(c))}
+function newContent(date){openM(formC({brand:'fiama',date:date||ds(inOct?dayOf(today):1),format:'reels',title:'',campaign:'',objective:'conversão',status:'planejado',product:'',cta:'',responsible:'Marketing',notes:'',checklist:emptyCk()}))}
+function newIdea(){openM(`<h2>Nova ideia</h2><div class="f"><div class="w"><label for="i_t">TÍTULO</label><input id="i_t"></div><div><label for="i_b">MARCA</label><select id="i_b">${opt(Object.entries(B).map(([k,v])=>[k,v.n]))}</select></div><div><label for="i_th">TEMA</label><input id="i_th"></div><div><label for="i_f">FORMATO</label><select id="i_f">${opt(Object.entries(FM))}</select></div><div><label for="i_o">OBJETIVO</label><select id="i_o">${opt(OB.map(o=>[o,o]))}</select></div><div><label for="i_p">PRIORIDADE</label><select id="i_p">${opt(Object.entries(PRI))}</select></div><div class="w"><label for="i_n">OBSERVAÇÃO</label><textarea id="i_n" rows="2"></textarea></div></div><div class="ac"><button class="btn p" data-act="si">Guardar ideia</button><button class="btn" data-act="x">Fechar</button></div>`)}
+
+/* ============ AÇÕES / EVENTOS ============ */
+document.addEventListener('click',e=>{
+ const t=e.target.closest('button,.modal');if(!t)return;
+ if(t.id==='md'){closeM();return}
+ const d=t.dataset;
+ if(d.tab){S.tab=d.tab;render()}
+ else if(d.view){S.view=d.view;render()}
+ else if(d.fk){const a=S.f[d.fk],i=a.indexOf(d.fv);i<0?a.push(d.fv):a.splice(i,1);S.fp=true;render()}
+ else if(d.tl){S.tab='cal';S.q='';S.view='semana';S.week=WEEKS.findIndex(w=>+d.tl<=w[1]);render()}
+ else if(d.stories){openStories(d.stories)}
+ else if(d.id&&!d.act){openContent(d.id)}
+ else if(d.ideaDel){S.ideas=S.ideas.filter(i=>i.id!=d.ideaDel);render()}
+ else if(d.ideaPlan){const i=S.ideas.find(x=>x.id==d.ideaPlan);newContent();$('#m_title').value=i.title;$('#m_brand').value=i.brand;$('#m_format').value=i.format;$('#m_obj').value=i.obj;$('#m_camp').value=i.theme;$('#m_status').value='ideia'}
+ else if(d.act){act(d.act,d.id)}
+ else if(t.id==='bf'){S.fp=!S.fp;if(S.tab==='geral'||S.tab==='ideias')S.tab='cal';render()}
+ else if(t.id==='bn')newContent();
+ else if(t.id==='ex'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:'application/json'}));a.download='calendario-editorial-outubro-2026.json';a.click();toast('Dados exportados')}
+ else if(t.id==='im')$('#fi').click();
+ else if(t.id==='rs'){if(confirm('Apagar todas as alterações e voltar ao planejamento original do PDF?')){S=fresh();render();toast('Calendário resetado')}}
+});
+function act(a,id){
+ const c=S.contents.find(x=>x.id==id);
+ if(a==='x')closeM();
+ else if(a==='clr'){S.f={brand:[],format:[],status:[],objective:[]};S.q='';$('#q').value='';render()}
+ else if(a==='wp'){S.week=Math.max(0,S.week-1);render()}
+ else if(a==='wn'){S.week=Math.min(4,S.week+1);render()}
+ else if(a==='wc'){S.week=inOct?WEEKS.findIndex(w=>dayOf(today)<=w[1]):0;render()}
+ else if(a==='ni')newIdea();
+ else if(a==='si'){S.ideas.push({id:Date.now(),title:$('#i_t').value||'Ideia sem título',brand:$('#i_b').value,theme:$('#i_th').value,format:$('#i_f').value,obj:$('#i_o').value,pri:$('#i_p').value,note:$('#i_n').value});closeM();render();toast('Ideia guardada')}
+ else if(a==='add'){const n=readForm({id:nextId(),checklist:emptyCk()});S.contents.push(n);closeM();render();toast('Conteúdo criado')}
+ else if(a==='sv'){readForm(c);closeM();render();toast('Conteúdo salvo')}
+ else if(a==='dup'){S.contents.push({...JSON.parse(JSON.stringify(readForm(c))),id:nextId(),title:c.title+' (cópia)'});closeM();render();toast('Conteúdo duplicado')}
+ else if(a==='del'){if(confirm('Excluir este conteúdo?')){S.contents=S.contents.filter(x=>x!==c);closeM();render();toast('Conteúdo excluído')}}}
+document.addEventListener('change',e=>{
+ const k=e.target.dataset.ck;if(k){const id=document.querySelector('[data-act=sv]')?.dataset.id,c=S.contents.find(x=>x.id==id);c.checklist[k]=e.target.checked;save();toast(e.target.checked?'✔ Etapa concluída':'Etapa reaberta')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+$('#q').addEventListener('input',e=>{S.q=e.target.value;if(S.tab==='geral'||S.tab==='ideias')S.tab='cal';render()});
+$('#fi').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const j=JSON.parse(r.result);if(!Array.isArray(j.contents))throw 0;S=Object.assign(fresh(),j);render();toast('Dados importados')}catch(x){alert('Arquivo inválido. Use um JSON exportado por este calendário.')}};r.readAsText(f);e.target.value=''});
+/* drag and drop (Kanban) */
+let dragId=null;
+document.addEventListener('dragstart',e=>{const i=e.target.closest('.it');if(i)dragId=i.dataset.id});
+document.addEventListener('dragover',e=>{const c=e.target.closest('.col');if(c){e.preventDefault();c.classList.add('over')}});
+document.addEventListener('dragleave',e=>{e.target.closest?.('.col')?.classList.remove('over')});
+document.addEventListener('drop',e=>{const c=e.target.closest('.col');if(!c||!dragId)return;e.preventDefault();const x=S.contents.find(v=>v.id==dragId);if(x&&x.status!==c.dataset.drop){x.status=c.dataset.drop;render();toast('Status atualizado: '+ST[x.status][0])}dragId=null});
+if(inOct)S.week=WEEKS.findIndex(w=>dayOf(today)<=w[1]);
+render();
+</script></body></html>
